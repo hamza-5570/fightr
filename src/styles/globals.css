@@ -1,9 +1,29 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+.bg
+{
+  background-image: url(../../public/assets/jpg/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+.bg-res
+{
+  background-image: url(../../public/assets/jpg/bg-res.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner
+{
+  background-image: url(../../public/assets/png/banner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
 
 @theme inline {
   --color-background: var(--background);
@@ -14,7 +34,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: black;
     --foreground: #ededed;
   }
 }
