@@ -15,8 +15,17 @@ export default function Home() {
             alt=""
             width={1400}
             height={311}
-            className="mx-auto mt-24 md:mt-48 xl:mt-80"
+            className="hidden md:block mx-auto mt-24 md:mt-48 xl:mt-80"
           />
+
+<Image
+            src={"/assets/png/mob.png"}
+            alt=""
+            width={1400}
+            height={311}
+            className="block md:hidden mx-auto mt-24 md:mt-48 xl:mt-80"
+          />
+
 
           <p className="font-normal text-sm md:text-base text-white opacity-60 text-center  w-[90%] xl:w-[50%] mx-auto">
             Tune into your inner warrior and become the ultimate fighter. Join

@@ -12,15 +12,15 @@ export default function Footer() {
               alt=""
               width={196}
               height={32}
-              className=""
+              className="mx-auto md:mx-0"
             />
-            <h4 className="font-normal text-sm xl:text-base text-white opacity-50 mt-5">
+            <h4 className="text-center md:text-start font-normal text-sm xl:text-base text-white opacity-50 mt-5">
               Fightr is a platform built for fighters, by fighters, bringing
               real-world achievements online. With personalized plans, facility
               maps, and spirited challenges, we empower continuous growth.
             </h4>
 
-           <div className="flex gap-2 mt-5">
+           <div className="flex justify-center md:justify-start gap-2 mt-5">
             <Image src={'/assets/svg/fsoc.svg'} alt="" width={52} height={52} className="cursor-pointer" />
             <Image src={'/assets/svg/fsoc2.svg'} alt="" width={52} height={52} className="cursor-pointer" />
             <Image src={'/assets/svg/fsoc3.svg'} alt="" width={52} height={52} className="cursor-pointer" />
@@ -48,7 +48,7 @@ export default function Footer() {
 
         </div>
 
-        <p className="font-medium text-sm text-white opacity-50 text-center mt-10">Copyright © 2025 FIGHTR .All rights reserved.</p>
+        <p className="font-medium text-[12px] md:text-sm text-white opacity-50 text-center mt-10">Copyright © 2025 FIGHTR .All rights reserved.</p>
       
       <div className="flex gap-3 justify-center mt-5">
       <p className="font-medium text-[10px] text-white ">Privacy Policy</p>
