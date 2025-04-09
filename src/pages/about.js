@@ -33,7 +33,7 @@ export default function About() {
       </div>
 
       <div className="bg-black w-[90%] mx-auto pt-10">
-        <div className="bg-[#0A0A0A] rounded-full p-2 flex gap-2 w-[160px]">
+        <div className="bg-[#0A0A0A] rounded-full p-2 flex mx-auto md:mx-0  gap-2 w-[160px]">
           <div className="flex gap-2">
             <Image
               src={"/assets/svg/home.svg"}
