@@ -124,7 +124,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="banner rounded-[12px] lg:rounded-[30px] p-4 py-6 md:p-8">
+        <div className="banner rounded-[12px] lg:rounded-[30px] p-4 py-6 md:p-8 mt-10 lg:mt-20">
             <p className="font-normal text-[18px] xl:text-[26px] text-white">
               Ready to Take Your Fighting Skills to the Next Level?
             </p>
