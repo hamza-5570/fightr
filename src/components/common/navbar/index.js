@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="grid grid-cols-2 lg:grid-cols-3 w-[90%] mx-auto py-4">
+      <div className="grid grid-cols-2 lg:grid-cols-3 w-[90%] 2xl:max-w-2xl mx-auto py-4">
         <div className="hidden lg:flex gap-10 self-center">
           <Link href="/" className="font-medium text-sm text-white hover:text-[#FF0000] cursor-pointer">
             Home

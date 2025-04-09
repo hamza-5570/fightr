@@ -14,7 +14,7 @@ export default function Activation() {
         />
 
         <div className="min-h-screen flex items-center justify-center">
-          <div className="bg-[#141414] border-[1px] border-[#1d1d1d] w-[90%] md:w-[70%] lg:w-[55%] xl:w-[35%] p-5 md:p-10 rounded-[20px]">
+          <div className="bg-[#141414] border-[1px] border-[#1d1d1d] w-[90%] md:w-[70%] lg:w-[55%] xl:w-[35%] 2xl:max-w-3xl p-5 md:p-10 rounded-[20px]">
             <Image
               src={"/assets/svg/check.svg"}
               alt=""
@@ -38,7 +38,7 @@ export default function Activation() {
           </div>
         </div>
 
-        <div className="flex gap-2 mt-5 absolute bottom-5 right-5">
+        <div className="flex justify-center gap-2 mt-5 absolute bottom-5  left-0 md:left-auto right-5">
           <Image
             src={"/assets/svg/fb.svg"}
             alt=""
@@ -47,14 +47,14 @@ export default function Activation() {
             className="cursor-pointer"
           />
           <Image
-            src={"/assets/svg/fsoc2.svg"}
+            src={"/assets/svg/insta.svg"}
             alt=""
             width={52}
             height={52}
             className="cursor-pointer"
           />
           <Image
-            src={"/assets/svg/fsoc4.svg"}
+            src={"/assets/svg/x.svg"}
             alt=""
             width={52}
             height={52}

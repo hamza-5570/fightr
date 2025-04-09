@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <>
       <div className="bg-[#131313] pt-10 md:pt-20 pb-10 mt-16 lg:mt-28">
-        <div className="grid lg:grid-cols-2 w-[90%] mx-auto">
+        <div className="grid lg:grid-cols-2 w-[90%] 2xl:max-w-2xl mx-auto">
           <div>
             <Image
               src={"/assets/svg/logo.svg"}

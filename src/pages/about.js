@@ -32,7 +32,7 @@ export default function About() {
         <Navbar />
       </div>
 
-      <div className="bg-black w-[90%] mx-auto pt-10">
+      <div className="bg-black w-[90%] 2xl:max-w-2xl mx-auto pt-10">
         <div className="bg-[#0A0A0A] rounded-full p-2 flex mx-auto md:mx-0  gap-2 w-[160px]">
           <div className="flex gap-2">
             <Image

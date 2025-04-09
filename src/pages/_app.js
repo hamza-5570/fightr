@@ -5,7 +5,14 @@ import { Toaster } from "sonner";
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Toaster position="bottom-right" richColors />
+      <Toaster position="bottom-right" richColors
+      
+      toastOptions={{
+        style: {
+          background: 'black',
+        },
+      }}
+      />
       <Component {...pageProps} />
     </>
   );
