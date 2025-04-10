@@ -94,6 +94,7 @@ export default function Registration() {
 
         <form className="mt-5" onSubmit={formik.handleSubmit}>
           <div className="grid md:grid-cols-12 gap-8">
+     
             <div className="md:col-span-6 bg-[#191919] rounded-[12px] p-3">
               <p className="font-medium text-[12px] text-[#605858]">
                 First Name

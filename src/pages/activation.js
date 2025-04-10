@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function Activation() {
@@ -32,9 +33,11 @@ export default function Activation() {
               We are going to keep you updated by E-mail so keep
               your eyes peeled!
             </h4>
+           <Link href={'/about'}>
             <button className="mt-8 font-bold text-sm text-white cursor-pointer bg-[#FF0000] rounded-full w-full md:w-[244px] h-[52px] block mx-auto">
               Continue
             </button>
+            </Link>
           </div>
         </div>
 
