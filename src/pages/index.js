@@ -23,7 +23,7 @@ export default function Home() {
             alt=""
             width={1400}
             height={311}
-            className="block md:hidden mx-auto mt-24 md:mt-48 xl:mt-80"
+            className="block md:hidden  mt-24 md:mt-48 xl:mt-80 w-[95%] mx-auto"
           />
 
           <p className="font-normal text-sm md:text-base text-white opacity-60 text-center  w-[90%] xl:w-[50%] mx-auto">

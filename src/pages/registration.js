@@ -21,6 +21,7 @@ export default function Registration() {
       email: "",
       password: "",
       weight: "",
+      gender: "Select",
       selectedValue: "25",
       selectedDOB: "Select",
       selectedDiscipline: "Select",
@@ -34,7 +35,9 @@ export default function Registration() {
       password: Yup.string()
         .min(6, "Password must be at least 6 characters")
         .required("Password is required"),
+        gender: Yup.string().required("Gender is required"),
       weight: Yup.string(),
+      
     }),
     onSubmit: async (values) => {
       setLoading(true);
@@ -42,6 +45,9 @@ export default function Registration() {
       const metadata = {
         firstName: values.firstName,
         lastName: values.lastName,
+        gender:values.gender !== "Select"
+        ? String(values.gender)
+        : null,
         age:
           values.selectedValue !== "Select"
             ? String(values.selectedValue)
@@ -185,7 +191,17 @@ export default function Registration() {
               />
             </div>
 
-            <div className="md:col-span-12 bg-[#191919] rounded-[12px] p-3">
+            <div className="md:col-span-6 bg-[#191919] rounded-[12px] p-3">
+              <p className="font-medium text-[12px] text-[#605858]">Gender</p>
+              <Dropdown
+                value={formik.values.gender}
+                options={["M", "F"]}
+                onChange={(val) => formik.setFieldValue("gender", val)}
+              />
+            </div>
+
+
+            <div className="md:col-span-6 bg-[#191919] rounded-[12px] p-3">
               <p className="font-medium text-[12px] text-[#605858]">
                 Weight (Optional)
               </p>
@@ -196,6 +212,9 @@ export default function Registration() {
                 {...formik.getFieldProps("weight")}
               />
             </div>
+
+
+
 
             <div className="md:col-span-12 bg-[#191919] rounded-[12px] p-3">
               <p className="font-medium text-[12px] text-[#605858]">

@@ -8,6 +8,17 @@
   background-size: cover;
 }
 
+@media (max-width: 600px) { 
+  .bg
+  {
+    background-image: url(../../public/assets/png/home-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+ }
+
+
 .bg-res
 {
   background-image: url(../../public/assets/jpg/bg-res.jpg);
