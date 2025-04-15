@@ -37,7 +37,6 @@ export default function Home() {
               Register
             </button>
           </Link>
-              <p className="font-medium text-[16px] text-white text-center mt-[20px]">Contact Us </p>
           <div className="flex justify-center gap-5 mt-5">
             <Image
               src={"/assets/svg/icon.svg"}

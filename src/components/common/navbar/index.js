@@ -28,9 +28,9 @@ export default function Navbar() {
           >
             About Us
           </Link>
-          <p className="font-medium text-sm text-white hover:text-[#FF0000] cursor-pointer">
+          <Link href="/contact" className="font-medium text-sm text-white hover:text-[#FF0000] cursor-pointer">
             Contact Us
-          </p>
+          </Link>
         </div>
 
         <div className="self-center">
