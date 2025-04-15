@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import { FaFacebookF } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -20,41 +22,63 @@ export default function Footer() {
               maps, and spirited challenges, we empower continuous growth.
             </h4>
 
-           <div className="flex justify-center md:justify-start gap-2 mt-5">
-            <Image src={'/assets/svg/fsoc.svg'} alt="" width={52} height={52} className="cursor-pointer" />
-            <Image src={'/assets/svg/fsoc2.svg'} alt="" width={52} height={52} className="cursor-pointer" />
-            <Image src={'/assets/svg/fsoc3.svg'} alt="" width={52} height={52} className="cursor-pointer" />
-            <Image src={'/assets/svg/fsoc4.svg'} alt="" width={52} height={52} className="cursor-pointer" />
-           </div>
-
+            <div className="flex justify-center md:justify-start gap-2 mt-5">
+              <div className="w-[52px] h-[52px] flex items-center justify-center bg-[#161616] rounded-lg cursor-pointer">
+                <FaFacebookF size={20} color="#fff" />
+              </div>
+              <Image
+                src={"/assets/svg/fsoc2.svg"}
+                alt=""
+                width={52}
+                height={52}
+                className="cursor-pointer"
+              />
+              <Image
+                src={"/assets/svg/fsoc4.svg"}
+                alt=""
+                width={52}
+                height={52}
+                className="cursor-pointer"
+              />
+            </div>
           </div>
 
-         <div className="flex gap-20 lg:justify-end mt-10 lg:mt-0">
+          <div className="flex gap-20 lg:justify-end mt-10 lg:mt-0">
             <div>
-                <p className="font-bold text-sm text-white">Useful Links</p>
-                <p className="font-medium text-[12px] text-white opacity-50 hover:opacity-100 cursor-pointer mt-5">Privacy Policy</p>
-                <p className="font-medium text-[12px] text-white opacity-50 hover:opacity-100 cursor-pointer mt-5">Refund Policy</p>
-                <p className="font-medium text-[12px] text-white opacity-50 hover:opacity-100 cursor-pointer mt-5">Frequently Asked Questions</p>
-                <p className="font-medium text-[12px] text-white opacity-50 hover:opacity-100 cursor-pointer mt-5">Work with Us</p>
+              <p className="font-bold text-sm text-white mb-5">Useful Links</p>
+              <Link
+                href={"/privacy-policy"}
+                className="font-medium text-[12px] text-white opacity-50 hover:opacity-100 cursor-pointer"
+              >
+                Privacy Policy
+              </Link>
             </div>
 
             <div>
-                <p className="font-bold text-sm text-white">Contact Us</p>
-                <p className="font-medium text-[12px] text-white opacity-50 hover:opacity-100 cursor-pointer mt-5">support@eloblaze.com</p>
-                <p className="font-medium text-[12px] text-white opacity-50 hover:opacity-100 cursor-pointer mt-5">+1 2332 3453 334</p>
+              <p className="font-bold text-sm text-white">Contact Us</p>
+              <p className="font-medium text-[12px] text-white opacity-50 hover:opacity-100 cursor-pointer mt-5">
+                support@fightr.app
+              </p>
             </div>
-
-         </div>
-
+          </div>
         </div>
 
-        <p className="font-medium text-[12px] md:text-sm text-white opacity-50 text-center mt-10">Copyright © 2025 FIGHTR .All rights reserved.</p>
-      
-      <div className="flex gap-3 justify-center mt-5">
-      <p className="font-medium text-[10px] text-white ">Privacy Policy</p>
-      <p className="font-medium text-[10px] text-white ">Fulfilment Policy</p>
-      <p className="font-medium text-[10px] text-white ">Terms of Service</p>
-      </div>
+        <p className="font-medium text-[12px] md:text-sm text-white opacity-50 text-center mt-10">
+          Copyright © 2025 FIGHTR .All rights reserved.
+        </p>
+
+        <div className="flex gap-3 justify-center mt-5">
+          <Link href={"/privacy-policy"}>
+            <p className="font-medium text-[10px] text-white ">
+              Privacy Policy
+            </p>
+          </Link>
+          <Link href={"/terms-service"}>
+            <p className="font-medium text-[10px] text-white ">
+              Terms of Service
+            </p>
+          </Link>
+        </div>
       </div>
     </>
   );

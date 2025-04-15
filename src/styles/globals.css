@@ -1,43 +1,37 @@
 @import "tailwindcss";
 
+body {
+  background-color: #000 !important;
+}
 
-.bg
-{
+.bg {
   background-image: url(../../public/assets/jpg/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-@media (max-width: 600px) { 
-  .bg
-  {
+@media (max-width: 600px) {
+  .bg {
     background-image: url(../../public/assets/png/home-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
- }
+}
 
-
-.bg-res
-{
+.bg-res {
   background-image: url(../../public/assets/jpg/bg-res.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.banner
-{
+.banner {
   background-image: url(../../public/assets/png/banner.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-
-
 @theme inline {
-
   --max-width-2xl: 1300px;
   --max-width-3xl: 700px;
   --color-background: var(--background);

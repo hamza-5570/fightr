@@ -15,7 +15,7 @@ const Dropdown = ({ value, options = [], onChange }) => {
         className="flex justify-between  cursor-pointer   mt-1"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p className="font-bold text-sm text-white">{value}</p>
+        <p className="font-bold text-sm text-white">{value || "Select"}</p>
         <IoMdArrowDropdown
           className={`text-white text-base transform transition-transform ${
             isOpen ? "rotate-180" : ""

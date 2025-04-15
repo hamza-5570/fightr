@@ -7,6 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Dropdown from "@/components/dropdown";
 import { toast } from "sonner";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Registration() {
   const supabase = createClient();
@@ -21,10 +22,11 @@ export default function Registration() {
       email: "",
       password: "",
       weight: "",
-      gender: "Select",
+      gender: "",
       selectedValue: "25",
-      selectedDOB: "Select",
-      selectedDiscipline: "Select",
+      selectedDOB: "",
+      selectedDiscipline: "",
+      acceptPolicy: false,
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required("First name is required"),
@@ -35,9 +37,11 @@ export default function Registration() {
       password: Yup.string()
         .min(6, "Password must be at least 6 characters")
         .required("Password is required"),
-        gender: Yup.string().required("Gender is required"),
+      gender: Yup.string().required("Gender is required"),
       weight: Yup.string(),
-      
+      acceptPolicy: Yup.bool()
+        .oneOf([true], "You must accept the privacy policy")
+        .required("Required"),
     }),
     onSubmit: async (values) => {
       setLoading(true);
@@ -45,9 +49,7 @@ export default function Registration() {
       const metadata = {
         firstName: values.firstName,
         lastName: values.lastName,
-        gender:values.gender !== "Select"
-        ? String(values.gender)
-        : null,
+        gender: values.gender !== "Select" ? String(values.gender) : null,
         age:
           values.selectedValue !== "Select"
             ? String(values.selectedValue)
@@ -90,7 +92,7 @@ export default function Registration() {
         className="w-[140px] md:w-auto mx-auto"
       />
 
-      <div className="bg-[#141414] border-[1px] border-[#1d1d1d] mt-10 w-[90%] md:w-[80%] lg:w-[60%] xl:w-[40%]   mx-auto p-5 md:p-10 rounded-[20px]">
+      <div className="bg-[#141414] border-[1px] border-[#1d1d1d] mt-10 w-[90%] md:w-[80%] lg:w-[60%] xl:w-[40%] mx-auto p-5 md:p-10 rounded-[20px]">
         <h2 className="font-bold text-[24px] md:text-[32px] text-white text-center">
           Create an Account
         </h2>
@@ -100,7 +102,6 @@ export default function Registration() {
 
         <form className="mt-5" onSubmit={formik.handleSubmit}>
           <div className="grid md:grid-cols-12 gap-8">
-     
             <div className="md:col-span-6 bg-[#191919] rounded-[12px] p-3">
               <p className="font-medium text-[12px] text-[#605858]">
                 First Name
@@ -198,8 +199,12 @@ export default function Registration() {
                 options={["M", "F"]}
                 onChange={(val) => formik.setFieldValue("gender", val)}
               />
+              {formik.touched.gender && formik.errors.gender && (
+                <div className="text-red-500 text-xs">
+                  {formik.errors.gender}
+                </div>
+              )}
             </div>
-
 
             <div className="md:col-span-6 bg-[#191919] rounded-[12px] p-3">
               <p className="font-medium text-[12px] text-[#605858]">
@@ -212,9 +217,6 @@ export default function Registration() {
                 {...formik.getFieldProps("weight")}
               />
             </div>
-
-
-
 
             <div className="md:col-span-12 bg-[#191919] rounded-[12px] p-3">
               <p className="font-medium text-[12px] text-[#605858]">
@@ -229,6 +231,28 @@ export default function Registration() {
               />
             </div>
           </div>
+
+          <div className="mt-6 flex items-start gap-2">
+            <label className="flex items-center gap-2 text-white text-sm cursor-pointer">
+              <input
+                type="checkbox"
+                name="acceptPolicy"
+                checked={formik.values.acceptPolicy}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="accent-[#FF0000] w-4 h-4 cursor-pointer"
+              />
+              I agree to the{" "}
+              <Link href="/privacy-policy" className="text-[#FF0000] underline">
+                Privacy Policy
+              </Link>
+            </label>
+          </div>
+          {formik.touched.acceptPolicy && formik.errors.acceptPolicy && (
+            <div className="text-red-500 text-xs mt-1">
+              {formik.errors.acceptPolicy}
+            </div>
+          )}
 
           <button
             type="submit"
