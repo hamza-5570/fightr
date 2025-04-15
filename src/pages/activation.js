@@ -7,7 +7,7 @@ export default function Activation() {
     <>
       <div className="py-10 relative">
         <Image
-          src={"/assets/svg/logo.svg"}
+          src="/assets/png/logo.png"
           alt=""
           width={196}
           height={32}
@@ -33,10 +33,10 @@ export default function Activation() {
               We are going to keep you updated by E-mail so keep
               your eyes peeled!
             </h4>
-           <Link href={'/about'}>
-            <button className="mt-8 font-bold text-sm text-white cursor-pointer bg-[#FF0000] rounded-full w-full md:w-[244px] h-[52px] block mx-auto">
-              Continue
-            </button>
+            <Link href={"/about"}>
+              <button className="mt-8 font-bold text-sm text-white cursor-pointer bg-[#FF0000] rounded-full w-full md:w-[244px] h-[52px] block mx-auto">
+                Continue
+              </button>
             </Link>
           </div>
         </div>

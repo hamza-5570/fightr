@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid lg:grid-cols-2 w-[90%] 2xl:max-w-2xl mx-auto">
           <div>
             <Image
-              src={"/assets/svg/logo.svg"}
+              src={"/assets/png/logo.png"}
               alt=""
               width={196}
               height={32}

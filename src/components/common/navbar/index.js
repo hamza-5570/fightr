@@ -16,10 +16,16 @@ export default function Navbar() {
     <>
       <div className="grid grid-cols-2 lg:grid-cols-3 w-[90%] 2xl:max-w-2xl mx-auto py-4">
         <div className="hidden lg:flex gap-10 self-center">
-          <Link href="/" className="font-medium text-sm text-white hover:text-[#FF0000] cursor-pointer">
+          <Link
+            href="/"
+            className="font-medium text-sm text-white hover:text-[#FF0000] cursor-pointer"
+          >
             Home
           </Link>
-          <Link href="/about" className="font-medium text-sm text-white hover:text-[#FF0000] cursor-pointer">
+          <Link
+            href="/about"
+            className="font-medium text-sm text-white hover:text-[#FF0000] cursor-pointer"
+          >
             About Us
           </Link>
           <p className="font-medium text-sm text-white hover:text-[#FF0000] cursor-pointer">
@@ -29,7 +35,7 @@ export default function Navbar() {
 
         <div className="self-center">
           <Image
-            src="/assets/svg/logo.svg"
+            src="/assets/png/logo.png"
             alt="Logo"
             width={196}
             height={32}
@@ -58,24 +64,32 @@ export default function Navbar() {
             className="fixed top-0 right-0 w-full h-full bg-[#0A0A0A] z-50 shadow-xl p-6"
           >
             <div className="flex justify-between mb-6">
-            <Image
-            src="/assets/svg/logo.svg"
-            alt="Logo"
-            width={196}
-            height={32}
-            className="w-[140px] md:w-auto lg:mx-auto"
-          />
-             
+              <Image
+                src="/assets/png/logo.png"
+                alt="Logo"
+                width={196}
+                height={32}
+                className="w-[140px] md:w-auto lg:mx-auto"
+              />
+
               <IoClose
                 className="text-3xl text-white cursor-pointer"
                 onClick={toggleDrawer}
               />
             </div>
             <div className="flex flex-col gap-6 pt-10">
-              <Link href="/" className="text-white font-medium text-lg" onClick={toggleDrawer}>
+              <Link
+                href="/"
+                className="text-white font-medium text-lg"
+                onClick={toggleDrawer}
+              >
                 Home
               </Link>
-              <Link href="/about" className="text-white font-medium text-lg" onClick={toggleDrawer}>
+              <Link
+                href="/about"
+                className="text-white font-medium text-lg"
+                onClick={toggleDrawer}
+              >
                 About Us
               </Link>
               <p className="text-white font-medium text-lg">Contact Us</p>

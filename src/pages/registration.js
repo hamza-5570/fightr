@@ -85,7 +85,7 @@ export default function Registration() {
   return (
     <div className="bg-res py-10">
       <Image
-        src={"/assets/svg/logo.svg"}
+        src="/assets/png/logo.png"
         alt=""
         width={196}
         height={32}
