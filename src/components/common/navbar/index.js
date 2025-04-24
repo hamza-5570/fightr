@@ -4,9 +4,11 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
@@ -18,18 +20,35 @@ export default function Navbar() {
         <div className="hidden lg:flex gap-10 self-center">
           <Link
             href="/"
-            className="font-medium text-sm text-white hover:text-[#FF0000] cursor-pointer"
+            className={`font-medium text-sm ${
+              pathname === "/" ? "text-[#FF0000]" : "text-white"
+            } hover:text-[#FF0000] cursor-pointer`}
           >
             Home
           </Link>
           <Link
             href="/about"
-            className="font-medium text-sm text-white hover:text-[#FF0000] cursor-pointer"
+            className={`font-medium text-sm ${
+              pathname === "/about" ? "text-[#FF0000]" : "text-white"
+            } hover:text-[#FF0000] cursor-pointer`}
           >
             About Us
           </Link>
-          <Link href="/contact" className="font-medium text-sm text-white hover:text-[#FF0000] cursor-pointer">
+          <Link
+            href="/contact"
+            className={`font-medium text-sm ${
+              pathname === "/contact" ? "text-[#FF0000]" : "text-white"
+            } hover:text-[#FF0000] cursor-pointer`}
+          >
             Contact Us
+          </Link>
+          <Link
+            href="/events"
+            className={`font-medium text-sm ${
+              pathname === "/events" ? "text-[#FF0000]" : "text-white"
+            } hover:text-[#FF0000] cursor-pointer`}
+          >
+            Events
           </Link>
         </div>
 
@@ -80,19 +99,40 @@ export default function Navbar() {
             <div className="flex flex-col gap-6 pt-10">
               <Link
                 href="/"
-                className="text-white font-medium text-lg"
+                className={`font-medium text-lg ${
+                  pathname === "/" ? "text-[#FF0000]" : "text-white"
+                }`}
                 onClick={toggleDrawer}
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="text-white font-medium text-lg"
+                className={`font-medium text-lg ${
+                  pathname === "/about" ? "text-[#FF0000]" : "text-white"
+                }`}
                 onClick={toggleDrawer}
               >
                 About Us
               </Link>
-              <p className="text-white font-medium text-lg">Contact Us</p>
+              <Link
+                href="/contact"
+                className={`font-medium text-lg ${
+                  pathname === "/contact" ? "text-[#FF0000]" : "text-white"
+                }`}
+                onClick={toggleDrawer}
+              >
+                Contact Us
+              </Link>
+              <Link
+                href="/events"
+                className={`font-medium text-lg ${
+                  pathname === "/events" ? "text-[#FF0000]" : "text-white"
+                }`}
+                onClick={toggleDrawer}
+              >
+                Events
+              </Link>
               <button className="mt-4 bg-[#FF0000] text-white font-bold py-2 px-4 rounded-full w-full">
                 Get Started
               </button>

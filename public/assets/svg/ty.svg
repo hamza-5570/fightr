@@ -1,0 +1,16 @@
+<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="26" cy="26" r="26" fill="#FF0000"/>
+<g clip-path="url(#clip0_383_284)">
+<mask id="mask0_383_284" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="14" y="14" width="24" height="24">
+<path d="M14 14H38V38H14V14Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_383_284)">
+<path d="M21 34C21 34.55 21.45 35 22 35H30C30.55 35 31 34.55 31 34V31H21V34ZM32 21C31.45 21 31 21.45 31 22V19C31 17.9 30.1 17 29 17H21C19.9 17 19 17.9 19 19V24.8C19 24.93 19.01 25.06 19.04 25.19L19.84 29.19C19.93 29.66 20.34 29.99 20.82 29.99H31.18C31.63 29.99 32.07 29.63 32.16 29.19L32.96 25.19C32.99 25.06 33 24.93 33 24.8V22C33 21.45 32.55 21 32 21ZM28 24H22C21.45 24 21 23.55 21 23V22C21 21.45 21.45 21 22 21H28C28.55 21 29 21.45 29 22V23C29 23.55 28.55 24 28 24Z" fill="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_383_284">
+<rect width="24" height="24" fill="white" transform="translate(14 14)"/>
+</clipPath>
+</defs>
+</svg>
