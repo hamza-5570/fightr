@@ -52,7 +52,7 @@ export default function Events() {
 
 
 <Slide/>
-<Card/>
+{/* <Card/> */}
 
       <Footer />
     </>
