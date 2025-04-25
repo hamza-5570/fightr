@@ -50,9 +50,8 @@ export default function Events() {
         </h4>
       </div>
 
-
-<Slide/>
-{/* <Card/> */}
+      <Slide />
+      {/* <Card/> */}
 
       <Footer />
     </>
