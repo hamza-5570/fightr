@@ -23,19 +23,13 @@ export default function Slide() {
       date: "May 15, 2025",
     },
     {
-        title: "The Ultimate Showdown 2025",
-        description: "Don't miss out on the most anticipated event of the year! The Ultimate Showdown",
-        image: "/assets/png/trick.png",
-        location: "Fighter Arena, 456 Combat Road, Knockout City, 12345",
-        date: "May 15, 2025",
+        title: "WinnerTakesAll 2025",
+        description: "Join the ultimate prize fighting competition today!",
+        image: "/assets/png/trick3.png",
+        location: "MAHER CENTRE LE40BZ",
+        date: "May 24, 2025",
       },
-      {
-        title: "Knockout Night Championship",
-        description: "The fiercest fighters will step into the ring at Knockout Night Championship",
-        image: "/assets/png/trick2.png",
-        location: "Gladiator Stadium, 789 Battle Ave, Flat City, 67890",
-        date: "May 15, 2025",
-      },
+      
   ];
 
   const settings = {
@@ -99,6 +93,7 @@ export default function Slide() {
                     alt={event.title}
                     width={430}
                     height={180}
+                    className="h-[180px]"
                   />
                   <div className="mt-4">
                     <p className="font-bold text-base">{event.title}</p>

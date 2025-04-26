@@ -12,10 +12,10 @@ export default function PrivacyPolicy() {
         </h2>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
-          At Fightr Ltd, we value your privacy and are committed to protecting
-          your personal data. This Privacy Policy explains how we collect, use,
-          and store your information when you interact with our website and
-          mobile app (currently in pre-launch).
+          At Fightr Limited, we value your privacy and are committed to
+          protecting your personal data. This Privacy Policy explains how we
+          collect, use, and store your information when you interact with our
+          website and mobile app (currently in pre-launch).
         </h4>
       </div>
 
@@ -25,15 +25,15 @@ export default function PrivacyPolicy() {
         </h2>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
-          Fightr Ltd
+          Fightr Limited
         </h4>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
-          Company number: [wpisz Company Number]
+          Company number: 16400462
         </h4>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
-          Registered address: [wpisz oficjalny adres firmy]
+          Registered address: 21 Field Maple Drive, Nottingham, England, NG7 5PU
         </h4>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
@@ -132,9 +132,13 @@ export default function PrivacyPolicy() {
         </h2>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
-          {`Your data is stored securely on [wpisz np. "encrypted cloud servers provided by AWS/Firebase/etc."].
-We implement appropriate technical and organisational measures to protect your information.
-`}
+          Your data is stored securely on
+         {""} <span className="text-blue-500 hover:underline cursor-pointer">
+            vercel.com
+          </span>
+          . We implement appropriate technical and organisational measures to
+          protect your information. We retain your data only as long as
+          necessary for the purposes described above, or as required by law.
         </h4>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-3 text-center md:text-start">

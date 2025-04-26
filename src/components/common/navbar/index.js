@@ -63,9 +63,12 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:block">
+        <Link href={'/registration'}>
+          
           <button className="font-bold text-sm text-white cursor-pointer bg-[#FF0000] rounded-full w-[152px] h-[52px] block ml-auto">
             Get Started
           </button>
+          </Link>
         </div>
 
         <div className="ml-auto block lg:hidden" onClick={toggleDrawer}>
@@ -133,9 +136,11 @@ export default function Navbar() {
               >
                 Events
               </Link>
+              <Link href={'/registration'}>
               <button className="mt-4 bg-[#FF0000] text-white font-bold py-2 px-4 rounded-full w-full">
                 Get Started
               </button>
+              </Link>
             </div>
           </motion.div>
         )}

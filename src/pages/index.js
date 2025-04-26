@@ -38,6 +38,7 @@ export default function Home() {
             </button>
           </Link>
           <div className="flex justify-center gap-5 mt-5">
+            
             <Image
               src={"/assets/svg/icon.svg"}
               alt=""
@@ -45,6 +46,7 @@ export default function Home() {
               height={52}
               className="cursor-pointer"
             />
+          <Link href={'/https://instagram.com/fightr.app'}>
             <Image
               src={"/assets/svg/icon2.svg"}
               alt=""
@@ -52,6 +54,8 @@ export default function Home() {
               height={52}
               className="cursor-pointer"
             />
+            </Link>
+            <Link href={'/https://x.com/fightrapp'}>
             <Image
               src={"/assets/svg/icon3.svg"}
               alt=""
@@ -59,6 +63,7 @@ export default function Home() {
               height={52}
               className="cursor-pointer"
             />
+            </Link>
           </div>
         </div>
       </div>
