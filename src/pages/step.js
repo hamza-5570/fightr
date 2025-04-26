@@ -33,7 +33,6 @@ const roles = [
 
 export default function Step() {
   const [selectedId, setSelectedId] = useState(null);
-
   const [currentStep, setCurrentStep] = useState(1);
 
   const handleContinue = () => {
@@ -44,7 +43,6 @@ export default function Step() {
 
   return (
     <>
-    {/* <div className="2xl:max-w-2xl mx-auto"> */}
       <div className="grid lg:grid-cols-12">
         <div className="lg:col-span-4 bg-[#0F0F0F] p-10 lg:h-screen relative">
           <Image src={"/assets/png/logo.png"} alt="" width={196} height={32} />
@@ -240,7 +238,6 @@ export default function Step() {
           </div>
         </div>
       </div>
-      {/* </div> */}
     </>
   );
 }
