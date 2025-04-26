@@ -104,7 +104,7 @@ export default function Activation() {
             </>
           )}
 
-          {status === "error" && (
+          {/* {status === "error" && (
             <>
               <Image
                 src="/assets/svg/error.svg"
@@ -126,7 +126,7 @@ export default function Activation() {
                 Resend Confirmation Email
               </button>
             </>
-          )}
+          )} */}
         </div>
       </div>
 
