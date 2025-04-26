@@ -71,13 +71,7 @@ export default function Activation() {
         <div className="bg-[#141414] border border-[#1d1d1d] w-[90%] md:w-[70%] lg:w-[55%] xl:w-[35%] p-5 md:p-10 rounded-[20px]">
           {status === "loading" && (
             <>
-              <Image
-                src="/assets/svg/check.svg"
-                alt="Verifying"
-                width={52}
-                height={52}
-                className="mx-auto"
-              />
+              
               <h2 className="font-bold text-[24px] md:text-[32px] text-white text-center mt-5">
                 Verifying your email…
               </h2>
