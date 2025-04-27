@@ -12,7 +12,7 @@ export default function TermsService() {
         </h2>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
-          {`These Terms of Service ("Terms") govern your access to and use of the Fightr website and mobile application (the "Service"), operated by Fightr Ltd, a company registered in the United Kingdom.`}
+          {`These Terms of Service ("Terms") govern your access to and use of the Fightr website and mobile application (the "Service"), operated by Fightr Limited, a company registered in the United Kingdom.`}
         </h4>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
@@ -27,15 +27,15 @@ export default function TermsService() {
         </h2>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
-          Fightr Ltd
+          Fightr Limited
         </h4>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
-          Company number: [wpisz Company Number]
+          Company number: 16400462
         </h4>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
-          Registered office: [adres]
+          Registered address: 21 Field Maple Drive, Nottingham, England, NG7 5PU
         </h4>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
@@ -85,16 +85,12 @@ export default function TermsService() {
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
           You may create a profile that includes personal details and
-          preferences.
+          preferences. By submitting any content to the platform, you grant
+          Fightr Limited a non-exclusive, worldwide, royalty-free license to use
+          that content for the purpose of providing the Service.
         </h4>
 
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-3 text-center md:text-start">
-          By submitting any content to the platform, you grant Fightr Ltd a
-          non-exclusive, worldwide, royalty-free license to use that content for
-          the purpose of providing the Service.
-        </h4>
-
-        <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-2 text-center md:text-start">
           You are solely responsible for the content you share and agree not to
           submit anything unlawful, offensive, or in violation of any
           third-party rights.
@@ -120,8 +116,8 @@ export default function TermsService() {
         <h4 className="font-normal text-sm md:text-base text-white opacity-50 mt-1 text-center md:text-start">
           All content on the website and app (unless submitted by users),
           including logos, text, design, and software, is the property of Fightr
-          Ltd or its licensors. You may not copy, distribute, or use our
-          materials without permission.
+          Limited or its licensors. You may not copy, distribute, or use our
+          materials without permission.
         </h4>
       </div>
 

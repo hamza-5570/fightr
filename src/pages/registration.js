@@ -68,6 +68,7 @@ export default function Registration() {
         password: values.password,
         options: {
           data: metadata,
+          emailRedirectTo: "https://fightr.vercel.app/activation"
         },
       });
 
@@ -77,8 +78,9 @@ export default function Registration() {
         toast.error(error.message);
         return;
       }
+
       toast.success("Signup successful!");
-      router.push("/activation");
+      router.push("/step");
     },
   });
 
