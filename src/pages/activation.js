@@ -45,10 +45,10 @@ export default function Activation() {
     };
 
     // start checking every 5 seconds
-    interval = setInterval(checkConfirmation, 5000);
+    interval = setInterval(checkConfirmation, 10000);
 
     // also call once immediately after 5 seconds
-    setTimeout(checkConfirmation, 5000);
+    setTimeout(checkConfirmation, 1000);
 
     // clean up interval when unmounting
     return () => clearInterval(interval);
