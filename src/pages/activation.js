@@ -15,37 +15,32 @@ export default function Activation() {
 
   useEffect(() => {
     const checkSession = async () => {
-      try {
-        const { data, error } = await supabase.auth.getSession();
-        if (error) {
-          console.error("Session error:", error);
-          setStatus("error");
-          setMessage("Activation failed. Please try again.");
-          return;
-        }
-
-        const user = data.session?.user;
-        if (user?.email_confirmed_at) {
-          setStatus("success");
-          setMessage("Your account has been successfully activated!");
-        } else {
-          // still not confirmed, keep checking
-          setStatus("loading");
-          setMessage("Verifying your email…");
-          setTimeout(checkSession, 3000); // keep polling every 3 sec
-        }
-      } catch (e) {
-        console.error(e);
+      const { data, error } = await supabase.auth.getUser(); // yahan change
+      if (error || !data.user) {
+        console.error("User error:", error);
         setStatus("error");
-        setMessage("An unexpected error occurred.");
+        setMessage("Activation failed. Please try again.");
+        return;
+      }
+  
+      const user = data.user;
+      if (user.email_confirmed_at) {
+        console.log("success mai aya");
+        setStatus("success");
+        setMessage("Your account has been successfully activated!");
+      } else {
+        console.log("email abhi confirm nahi hua");
+        setStatus("loading"); // optional: ya phir "pending" bhi rakh sakte ho
+        setMessage("Please confirm your email to continue.");
       }
     };
-
-    // Start checking immediately
-    checkSession();
+  
+    // small delay to let Supabase finish processing the link
+    setTimeout(checkSession, 5000);
   }, [router.query]);
-
+  
   const resendLink = async () => {
+    // assume you stored the user's email in localStorage on signup
     const email = window.localStorage.getItem("pending_email");
     if (!email) {
       toast.error("No email found. Please sign up again.");
@@ -71,11 +66,12 @@ export default function Activation() {
         <div className="bg-[#141414] border border-[#1d1d1d] w-[90%] md:w-[70%] lg:w-[55%] xl:w-[35%] p-5 md:p-10 rounded-[20px]">
           {status === "loading" && (
             <>
+              
               <h2 className="font-bold text-[24px] md:text-[32px] text-white text-center mt-5">
                 Verifying your email…
               </h2>
               <p className="text-center text-white opacity-50 mt-3">
-                {message}
+                Please hold on while we confirm your account.
               </p>
             </>
           )}
@@ -102,30 +98,6 @@ export default function Activation() {
               </Link>
             </>
           )}
-
-          {/* {status === "error" && (
-            <>
-              <Image
-                src="/assets/svg/error.svg"
-                alt="Error"
-                width={52}
-                height={52}
-                className="mx-auto"
-              />
-              <h2 className="font-bold text-[24px] md:text-[32px] text-white text-center mt-5">
-                Oops—link invalid or expired
-              </h2>
-              <p className="text-center text-white opacity-50 mt-3">
-                {message}
-              </p>
-              <button
-                onClick={resendLink}
-                className="mt-6 font-bold text-sm text-white bg-[#FF0000] rounded-full w-full md:w-[244px] h-[52px] block mx-auto"
-              >
-                Resend Confirmation Email
-              </button>
-            </>
-          )} */}
         </div>
       </div>
 
