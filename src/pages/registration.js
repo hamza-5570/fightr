@@ -68,7 +68,7 @@ export default function Registration() {
         password: values.password,
         options: {
           data: metadata,
-          emailRedirectTo: "https://fightr.vercel.app/activation"
+          emailRedirectTo: "https://www.fightr.app/activation",
         },
       });
 
