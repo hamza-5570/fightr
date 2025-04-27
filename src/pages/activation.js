@@ -41,7 +41,7 @@ export default function Activation() {
     };
 
     // small delay to let Supabase finish processing the link
-    setTimeout(checkSession, 1000);
+    // setTimeout(checkSession, 1000);
   }, [router.query]);
 
   const resendLink = async () => {
