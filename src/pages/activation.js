@@ -15,10 +15,9 @@ export default function Activation() {
 
   useEffect(() => {
     const checkSession = async () => {
-      setStatus("loading");  // Immediately set the status to loading
-
       const { data, error } = await supabase.auth.getSession();
       if (error) {
+        console.log("uper wale mai aya");
         console.error("Session error:", error);
         setStatus("error");
         setMessage("Activation failed. Please try again.");
@@ -27,22 +26,26 @@ export default function Activation() {
 
       const user = data.session?.user;
       if (user?.email_confirmed_at) {
+        console.log("succes mai aya");
         setStatus("success");
         setMessage("Your account has been successfully activated!");
       } else {
-        // If email is not confirmed, keep showing loading state until further check
-        setStatus("loading");  // Keep loading state until confirmation
+        console.log("error mai aya");
+        // Could be expired link or already activated
+        setStatus("error");
         setMessage(
-          "The activation link is invalid or has expired. Click below to resend:"
+          "The activation link is invalid or has expired. " +
+            "Click below to resend:"
         );
       }
     };
 
-    // Call the checkSession function directly without setTimeout
-    checkSession();
+    // small delay to let Supabase finish processing the link
+    setTimeout(checkSession, 5000);
   }, [router.query]);
 
   const resendLink = async () => {
+    // assume you stored the user's email in localStorage on signup
     const email = window.localStorage.getItem("pending_email");
     if (!email) {
       toast.error("No email found. Please sign up again.");
@@ -68,6 +71,7 @@ export default function Activation() {
         <div className="bg-[#141414] border border-[#1d1d1d] w-[90%] md:w-[70%] lg:w-[55%] xl:w-[35%] p-5 md:p-10 rounded-[20px]">
           {status === "loading" && (
             <>
+              
               <h2 className="font-bold text-[24px] md:text-[32px] text-white text-center mt-5">
                 Verifying your email…
               </h2>
@@ -100,7 +104,7 @@ export default function Activation() {
             </>
           )}
 
-          {status === "error" && (
+          {/* {status === "error" && (
             <>
               <Image
                 src="/assets/svg/error.svg"
@@ -122,7 +126,7 @@ export default function Activation() {
                 Resend Confirmation Email
               </button>
             </>
-          )}
+          )} */}
         </div>
       </div>
 
