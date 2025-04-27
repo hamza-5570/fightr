@@ -30,8 +30,8 @@ export default function Activation() {
         setStatus("success");
         setMessage("Your account has been successfully activated!");
       } else {
-        // Could be expired link or already activated
-        setStatus("error");
+        // If email is not confirmed, keep showing loading state until further check
+        setStatus("loading");  // Keep loading state until confirmation
         setMessage(
           "The activation link is invalid or has expired. Click below to resend:"
         );
@@ -43,7 +43,6 @@ export default function Activation() {
   }, [router.query]);
 
   const resendLink = async () => {
-    // assume you stored the user's email in localStorage on signup
     const email = window.localStorage.getItem("pending_email");
     if (!email) {
       toast.error("No email found. Please sign up again.");
@@ -101,7 +100,7 @@ export default function Activation() {
             </>
           )}
 
-          {/* {status === "error" && (
+          {status === "error" && (
             <>
               <Image
                 src="/assets/svg/error.svg"
@@ -123,7 +122,7 @@ export default function Activation() {
                 Resend Confirmation Email
               </button>
             </>
-          )} */}
+          )}
         </div>
       </div>
 
