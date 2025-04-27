@@ -23,15 +23,17 @@ export default function Activation() {
         setMessage("Activation failed. Please try again.");
         return;
       }
-
+  
       const user = data.session?.user;
       if (user?.email_confirmed_at) {
         console.log("succes mai aya");
-        setStatus("success");
-        setMessage("Your account has been successfully activated!");
+        // wait 1 second before setting success
+        setTimeout(() => {
+          setStatus("success");
+          setMessage("Your account has been successfully activated!");
+        }, 1000);
       } else {
         console.log("error mai aya");
-        // Could be expired link or already activated
         setStatus("error");
         setMessage(
           "The activation link is invalid or has expired. " +
@@ -39,11 +41,11 @@ export default function Activation() {
         );
       }
     };
-
-    // small delay to let Supabase finish processing the link
-    setTimeout(checkSession, 5000);
+  
+    // 10 second delay to simulate longer loading before checking
+    setTimeout(checkSession, 10000);
   }, [router.query]);
-
+  
   const resendLink = async () => {
     // assume you stored the user's email in localStorage on signup
     const email = window.localStorage.getItem("pending_email");
