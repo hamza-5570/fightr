@@ -5,20 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { createClient } from "@/supabase/supabase-component";
-import { toast } from "sonner";
 
 export default function Activation() {
+  const [loading, setLoading] = useState(true);
+  const [success, setSuccess] = useState(false);
   const [message, setMessage] = useState("");
   const router = useRouter();
   const supabase = createClient();
-  const [status, setStatus] = useState("loading");
 
   useEffect(() => {
     const checkSession = async () => {
       const { data, error } = await supabase.auth.getUser();
       if (error || !data.user) {
         console.error("User error:", error);
-        setStatus("error");
+        setLoading(false);
+        setSuccess(false);
         setMessage("Activation failed. Please try again.");
         return;
       }
@@ -26,18 +27,17 @@ export default function Activation() {
       const user = data.user;
       if (user.email_confirmed_at) {
         console.log("success mai aya");
-        setStatus("success");
+        setLoading(false);
+        setSuccess(true);
         setMessage("Your account has been successfully activated!");
       } else {
         console.log("abhi confirm nahi hua, loading pe rehna hai");
-        // status = "loading" hi rehne do
-        // koi error ya change nahi karni
+        // Stay in loading
       }
     };
   
     setTimeout(checkSession, 5000);
   }, [router.query]);
-  
 
   return (
     <div className="py-10 relative">
@@ -51,9 +51,8 @@ export default function Activation() {
 
       <div className="min-h-screen flex items-center justify-center">
         <div className="bg-[#141414] border border-[#1d1d1d] w-[90%] md:w-[70%] lg:w-[55%] xl:w-[35%] p-5 md:p-10 rounded-[20px]">
-          {status === "loading" && (
+          {loading && (
             <>
-              
               <h2 className="font-bold text-[24px] md:text-[32px] text-white text-center mt-5">
                 Verifying your email…
               </h2>
@@ -63,7 +62,7 @@ export default function Activation() {
             </>
           )}
 
-          {status === "success" && (
+          {!loading && success && (
             <>
               <Image
                 src="/assets/svg/check.svg"
@@ -85,6 +84,17 @@ export default function Activation() {
               </Link>
             </>
           )}
+
+          {/* {!loading && !success && (
+            <>
+              <h2 className="font-bold text-[24px] md:text-[32px] text-red-500 text-center mt-5">
+                Activation Failed
+              </h2>
+              <p className="text-center text-white opacity-50 mt-3">
+                {message}
+              </p>
+            </>
+          )} */}
         </div>
       </div>
 
