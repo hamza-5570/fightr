@@ -15,39 +15,37 @@ export default function Activation() {
 
   useEffect(() => {
     const checkSession = async () => {
-      const { data, error } = await supabase.auth.getSession();
-      if (error) {
-        console.log("uper wale mai aya");
-        console.error("Session error:", error);
-        setStatus("error");
-        setMessage("Activation failed. Please try again.");
-        return;
-      }
-  
-      const user = data.session?.user;
-      if (user?.email_confirmed_at) {
-        console.log("succes mai aya");
-        // wait 1 second before setting success
-        setTimeout(() => {
+      try {
+        const { data, error } = await supabase.auth.getSession();
+        if (error) {
+          console.error("Session error:", error);
+          setStatus("error");
+          setMessage("Activation failed. Please try again.");
+          return;
+        }
+
+        const user = data.session?.user;
+        if (user?.email_confirmed_at) {
           setStatus("success");
           setMessage("Your account has been successfully activated!");
-        }, 1000);
-      } else {
-        console.log("error mai aya");
+        } else {
+          // still not confirmed, keep checking
+          setStatus("loading");
+          setMessage("Verifying your email…");
+          setTimeout(checkSession, 3000); // keep polling every 3 sec
+        }
+      } catch (e) {
+        console.error(e);
         setStatus("error");
-        setMessage(
-          "The activation link is invalid or has expired. " +
-            "Click below to resend:"
-        );
+        setMessage("An unexpected error occurred.");
       }
     };
-  
-    // 10 second delay to simulate longer loading before checking
-    setTimeout(checkSession, 10000);
+
+    // Start checking immediately
+    checkSession();
   }, [router.query]);
-  
+
   const resendLink = async () => {
-    // assume you stored the user's email in localStorage on signup
     const email = window.localStorage.getItem("pending_email");
     if (!email) {
       toast.error("No email found. Please sign up again.");
@@ -73,12 +71,11 @@ export default function Activation() {
         <div className="bg-[#141414] border border-[#1d1d1d] w-[90%] md:w-[70%] lg:w-[55%] xl:w-[35%] p-5 md:p-10 rounded-[20px]">
           {status === "loading" && (
             <>
-              
               <h2 className="font-bold text-[24px] md:text-[32px] text-white text-center mt-5">
                 Verifying your email…
               </h2>
               <p className="text-center text-white opacity-50 mt-3">
-                Please hold on while we confirm your account.
+                {message}
               </p>
             </>
           )}
