@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,61 +9,35 @@ import { toast } from "sonner";
 
 export default function Activation() {
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("loading");
   const router = useRouter();
   const supabase = createClient();
+  const [status, setStatus] = useState("loading");
 
   useEffect(() => {
-    let interval;
-
-    const checkConfirmation = async () => {
+    const checkSession = async () => {
       const { data, error } = await supabase.auth.getUser();
       if (error || !data.user) {
         console.error("User error:", error);
         setStatus("error");
         setMessage("Activation failed. Please try again.");
-        clearInterval(interval); // stop polling if major error
         return;
       }
-
+  
       const user = data.user;
       if (user.email_confirmed_at) {
-        console.log("Email confirmed!");
-
-        clearInterval(interval); // stop polling when confirmed
-
-        // 1 second delay after confirmation
-        setTimeout(() => {
-          setStatus("success");
-          setMessage("Your account has been successfully activated!");
-        }, 1000);
+        console.log("success mai aya");
+        setStatus("success");
+        setMessage("Your account has been successfully activated!");
       } else {
-        console.log("Still waiting for email confirmation...");
-        // No change, stay in loading state
+        console.log("abhi confirm nahi hua, loading pe rehna hai");
+        // status = "loading" hi rehne do
+        // koi error ya change nahi karni
       }
     };
-
-    // start checking every 5 seconds
-    interval = setInterval(checkConfirmation, 10000);
-
-    // also call once immediately after 5 seconds
-    setTimeout(checkConfirmation, 1000);
-
-    // clean up interval when unmounting
-    return () => clearInterval(interval);
+  
+    setTimeout(checkSession, 5000);
   }, [router.query]);
-
-  const resendLink = async () => {
-    const email = window.localStorage.getItem("pending_email");
-    if (!email) {
-      toast.error("No email found. Please sign up again.");
-      return;
-    }
-
-    const { error } = await supabase.auth.signInWithOtp({ email });
-    if (error) toast.error(error.message);
-    else toast.success("Confirmation email resent—check your inbox!");
-  };
+  
 
   return (
     <div className="py-10 relative">
