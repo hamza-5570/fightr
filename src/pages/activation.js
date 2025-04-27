@@ -15,7 +15,7 @@ export default function Activation() {
 
   useEffect(() => {
     const checkSession = async () => {
-      const { data, error } = await supabase.auth.getUser(); // yahan change
+      const { data, error } = await supabase.auth.getUser();
       if (error || !data.user) {
         console.error("User error:", error);
         setStatus("error");
@@ -29,13 +29,12 @@ export default function Activation() {
         setStatus("success");
         setMessage("Your account has been successfully activated!");
       } else {
-        console.log("email abhi confirm nahi hua");
-        setStatus("loading"); // optional: ya phir "pending" bhi rakh sakte ho
-        setMessage("Please confirm your email to continue.");
+        console.log("abhi confirm nahi hua, loading pe rehna hai");
+        // status = "loading" hi rehne do
+        // koi error ya change nahi karni
       }
     };
   
-    // small delay to let Supabase finish processing the link
     setTimeout(checkSession, 5000);
   }, [router.query]);
   
