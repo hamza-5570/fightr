@@ -79,7 +79,7 @@ export default function Registration() {
         return;
       }
 
-      toast.success("Signup successful!");
+      toast.success("Signup successful! ");
       router.push("/step");
     },
   });
