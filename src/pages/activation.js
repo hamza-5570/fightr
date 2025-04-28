@@ -1,12 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LuLoader } from "react-icons/lu";
 
 export default function Activation() {
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     setLoading(true);
