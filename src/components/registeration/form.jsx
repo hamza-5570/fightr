@@ -149,7 +149,7 @@ export default function Form({ formik, handleStep }) {
               </p>
               <Dropdown
                 value={formik.values.selectedDiscipline}
-                options={["10", "25", "50", "100"]}
+                options={["MMA", "Kickboxing", "Boxing"]}
                 onChange={(val) =>
                   formik.setFieldValue("selectedDiscipline", val)
                 }

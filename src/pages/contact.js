@@ -38,30 +38,36 @@ export default function Registration() {
           </button>
         </form>
         <div className="flex justify-center gap-5 mt-5">
-          <Image
-            src={"/assets/svg/icon.svg"}
-            alt=""
-            width={52}
-            height={52}
-            className="cursor-pointer"
-          />
-          <Link href={'/https://instagram.com/fightr.app'}>
-
-          <Image
-            src={"/assets/svg/icon2.svg"}
-            alt=""
-            width={52}
-            height={52}
-            className="cursor-pointer"
-          />
+          <Link
+            href="https://www.facebook.com/share/1G1wHBj1Dh/?mibextid=wwXIfr"
+            target="_blank"
+          >
+            <Image
+              src={"/assets/svg/icon.svg"}
+              alt=""
+              width={52}
+              height={52}
+              className="cursor-pointer"
+            />
           </Link>
-          <Image
-            src={"/assets/svg/icon3.svg"}
-            alt=""
-            width={52}
-            height={52}
-            className="cursor-pointer"
-          />
+          <Link href='https://instagram.com/fightr.app' target="_blank">
+            <Image
+              src={"/assets/svg/icon2.svg"}
+              alt=""
+              width={52}
+              height={52}
+              className="cursor-pointer"
+            />
+          </Link>
+          <Link href="https://x.com/fightrapp" target="_blank">
+            <Image
+              src={"/assets/svg/icon3.svg"}
+              alt=""
+              width={52}
+              height={52}
+              className="cursor-pointer"
+            />
+          </Link>
         </div>
       </div>
     </div>

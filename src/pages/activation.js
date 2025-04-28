@@ -35,11 +35,16 @@ export default function Activation() {
             <LuLoader className="text-3xl text-center mx-auto text-[#FF0000]" />
           )}
           <h2 className="font-bold text-[24px] md:text-[32px] text-white text-center mt-5">
-            Email confirmed!
+          {"You're in"}
           </h2>
-          <p className="text-center text-white opacity-50 mt-3">
+          <p className="text-center text-white opacity-50 ">
             {loading
-              ? "Your account has been activated!"
+              ? "Welcome to Fightr!"
+              : ""}
+          </p>
+          <p className="text-center text-white opacity-50 mt-6">
+            {loading
+              ? "We are going to keep you updated by E-mail so keep your eyes peeled!"
               : "Activating your account..."}
           </p>
           <Link href="/about">
@@ -51,6 +56,8 @@ export default function Activation() {
       </div>
 
       <div className="flex justify-center gap-2 mt-5 absolute bottom-5 left-0 md:left-auto right-5">
+      <Link href="https://www.facebook.com/share/1G1wHBj1Dh/?mibextid=wwXIfr" target="_blank">
+     
         <Image
           src="/assets/svg/fb.svg"
           alt="Facebook"
@@ -58,6 +65,8 @@ export default function Activation() {
           height={52}
           className="cursor-pointer"
         />
+        </Link>
+        <Link href="https://instagram.com/fightr.app" target="_blank">
         <Image
           src="/assets/svg/insta.svg"
           alt="Instagram"
@@ -65,6 +74,10 @@ export default function Activation() {
           height={52}
           className="cursor-pointer"
         />
+        </Link>
+
+        <Link href="https://x.com/fightrapp" target="_blank">
+
         <Image
           src="/assets/svg/x.svg"
           alt="Twitter"
@@ -72,6 +85,7 @@ export default function Activation() {
           height={52}
           className="cursor-pointer"
         />
+        </Link>
       </div>
     </div>
   );

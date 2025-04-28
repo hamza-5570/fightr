@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from "next/link";
 
 export default function Slide() {
   const sliderRef = useRef(null);
@@ -11,9 +12,11 @@ export default function Slide() {
     {
       title: "WinnerTakesAll 2025",
       description: "Join the ultimate prize fighting competition today!",
-      image: "/assets/png/trick3.png",
+      image: "/assets/png/trick3.jpg",
       location: "MAHER CENTRE LE40BZ",
       date: "May 24, 2025",
+          link: "https://www.instagram.com/winnertakesall25", // <--- added link
+
     },
     
     
@@ -122,7 +125,9 @@ export default function Slide() {
 // Event Card component
 function EventCard({ event }) {
   return (
-    <div className="bg-[#0F0F0F] rounded-[30px] p-4">
+    <Link href={event.link} target="_blank" rel="noopener noreferrer">
+
+  <div className="bg-[#0F0F0F] rounded-[30px] p-4">
       <Image
         src={event.image}
         alt={event.title}
@@ -151,5 +156,6 @@ function EventCard({ event }) {
         </p>
       </div>
     </div>
+    </Link>
   );
 }
