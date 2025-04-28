@@ -33,7 +33,7 @@ export default function Activation() {
         console.log("abhi confirm nahi hua, loading pe rehna hai");
         // kuch nahi karna, loading hi rahega
       }
-    }, 3000); // har 5 second mai check karega
+    }, 2000); // har 5 second mai check karega
 
     return () => clearInterval(interval); // cleanup jab component unmount ho
   }, [router.query]);
