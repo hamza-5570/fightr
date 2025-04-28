@@ -81,7 +81,7 @@ export default function Registeration() {
         password: values.password,
         options: {
           data: metadata,
-          emailRedirectTo: "http://www.fightr.app/activation",
+          emailRedirectTo: "https://www.fightr.app/activation",
         },
       });
 
