@@ -1,18 +1,26 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const [user, setUser] = useState(null);
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const pathname = usePathname();
 
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) {
+      setUser(JSON.parse(user));
+    }
+  }, []);
 
   return (
     <>
@@ -63,12 +71,18 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:block">
-        <Link href={'/registration'}>
-          
-          <button className="font-bold text-sm text-white cursor-pointer bg-[#FF0000] rounded-full w-[152px] h-[52px] block ml-auto">
-            Get Started
-          </button>
-          </Link>
+          {user ? (
+            <div className="ml-auto w-13 h-13 flex items-center justify-center bg-[#FF0000] rounded-full text-white font-semibold uppercase">
+              {user?.user_metadata?.firstName?.charAt(0)}
+              {user?.user_metadata?.lastName?.charAt(0)}
+            </div>
+          ) : (
+            <Link href={"/registration"}>
+              <button className="font-bold text-sm text-white cursor-pointer bg-[#FF0000] rounded-full w-[152px] h-[52px] block ml-auto">
+                Get Started
+              </button>
+            </Link>
+          )}
         </div>
 
         <div className="ml-auto block lg:hidden" onClick={toggleDrawer}>
@@ -136,10 +150,10 @@ export default function Navbar() {
               >
                 Events
               </Link>
-              <Link href={'/registration'}>
-              <button className="mt-4 bg-[#FF0000] text-white font-bold py-2 px-4 rounded-full w-full">
-                Get Started
-              </button>
+              <Link href={"/registration"}>
+                <button className="mt-4 bg-[#FF0000] text-white font-bold py-2 px-4 rounded-full w-full">
+                  Get Started
+                </button>
               </Link>
             </div>
           </motion.div>

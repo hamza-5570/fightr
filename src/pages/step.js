@@ -58,7 +58,7 @@ export default function Step() {
             in just three easy steps and become part of a thriving community.
           </p>
 
-          <img
+          <Image
             src={"/assets/png/help.png"}
             alt=""
             width={117}
@@ -84,7 +84,7 @@ export default function Step() {
                 </p>
               </div>
               <p
-                className={`font-medium text-base self-center ${
+                className={`font-medium text-base self-center text-white ${
                   currentStep >= 1 ? "" : "opacity-50"
                 }`}
               >
@@ -106,7 +106,7 @@ export default function Step() {
                 </p>
               </div>
               <p
-                className={`font-medium text-base self-center ${
+                className={`font-medium text-base self-center text-white ${
                   currentStep >= 2 ? "" : "opacity-50"
                 }`}
               >

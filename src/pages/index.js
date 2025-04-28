@@ -1,9 +1,32 @@
 import Navbar from "@/components/common/navbar";
+import { supabase } from "@/supabase/supabase-client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
 export default function Home() {
+  const [user, setUser] = useState(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) {
+      setUser(JSON.parse(user));
+    }
+  }, []);
+
+  const logOut = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+    localStorage.clear();
+    sessionStorage.clear();
+    router.push("/login");
+  };
+
   return (
     <>
       <div className="bg pb-16 md:pb-28 pt-10">
@@ -32,13 +55,21 @@ export default function Home() {
             tread the road to greatness through our In-house Ranking.
           </p>
 
-          <Link href={"/registration"}>
-            <button className="mt-5 md:mt-10 font-bold text-sm text-white cursor-pointer bg-[#FF0000]  rounded-full w-[236px] h-[52px] block mx-auto">
-              Register
+          {user ? (
+            <button
+              onClick={logOut}
+              className="mt-5 md:mt-10 font-bold text-sm text-white cursor-pointer bg-[#FF0000]  rounded-full w-[236px] h-[52px] block mx-auto"
+            >
+              Logout
             </button>
-          </Link>
+          ) : (
+            <Link href={"/registration"}>
+              <button className="mt-5 md:mt-10 font-bold text-sm text-white cursor-pointer bg-[#FF0000]  rounded-full w-[236px] h-[52px] block mx-auto">
+                Register
+              </button>
+            </Link>
+          )}
           <div className="flex justify-center gap-5 mt-5">
-            
             <Image
               src={"/assets/svg/icon.svg"}
               alt=""
@@ -46,23 +77,23 @@ export default function Home() {
               height={52}
               className="cursor-pointer"
             />
-          <Link href={'/https://instagram.com/fightr.app'}>
-            <Image
-              src={"/assets/svg/icon2.svg"}
-              alt=""
-              width={52}
-              height={52}
-              className="cursor-pointer"
-            />
+            <Link href={"/https://instagram.com/fightr.app"}>
+              <Image
+                src={"/assets/svg/icon2.svg"}
+                alt=""
+                width={52}
+                height={52}
+                className="cursor-pointer"
+              />
             </Link>
-            <Link href={'/https://x.com/fightrapp'}>
-            <Image
-              src={"/assets/svg/icon3.svg"}
-              alt=""
-              width={52}
-              height={52}
-              className="cursor-pointer"
-            />
+            <Link href={"/https://x.com/fightrapp"}>
+              <Image
+                src={"/assets/svg/icon3.svg"}
+                alt=""
+                width={52}
+                height={52}
+                className="cursor-pointer"
+              />
             </Link>
           </div>
         </div>
