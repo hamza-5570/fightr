@@ -33,7 +33,7 @@ export default function Activation() {
         console.log("abhi confirm nahi hua, loading pe rehna hai");
         // kuch nahi karna, loading hi rahega
       }
-    }, 5000); // har 5 second mai check karega
+    }, 3000); // har 5 second mai check karega
 
     return () => clearInterval(interval); // cleanup jab component unmount ho
   }, [router.query]);
@@ -86,11 +86,13 @@ export default function Activation() {
 
           {status === "error" && (
             <>
-              <h2 className="font-bold text-[24px] md:text-[32px] text-red-500 text-center mt-5">
-                Activation failed!
+              <h2 className="font-bold text-[24px] md:text-[32px] text-white text-center mt-5">
+              Verifying your email…
+              
               </h2>
               <p className="text-center text-white opacity-50 mt-3">
-                {message}
+              Please hold on while we confirm your account.
+            
               </p>
             </>
           )}
