@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { LuLoader } from "react-icons/lu";
 
 export default function Activation() {
   const [loading, setLoading] = useState(false);
@@ -9,9 +10,6 @@ export default function Activation() {
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      router.push("/");
-    }, 3000);
   }, []);
 
   return (
@@ -26,11 +24,30 @@ export default function Activation() {
 
       <div className="min-h-screen flex items-center justify-center">
         <div className="bg-[#141414] border border-[#1d1d1d] w-[90%] md:w-[70%] lg:w-[55%] xl:w-[35%] p-5 md:p-10 rounded-[20px]">
-          <p className="text-white text-center">
+          {loading ? (
+            <Image
+              src="/assets/svg/check.svg"
+              alt="Confirmed"
+              width={52}
+              height={52}
+              className="mx-auto"
+            />
+          ) : (
+            <LuLoader className="text-3xl text-center mx-auto text-[#FF0000]" />
+          )}
+          <h2 className="font-bold text-[24px] md:text-[32px] text-white text-center mt-5">
+            Email confirmed!
+          </h2>
+          <p className="text-center text-white opacity-50 mt-3">
             {loading
               ? "Your account has been activated!"
               : "Activating your account..."}
           </p>
+          <Link href="/about">
+            <button className="cursor-pointer mt-8 font-bold text-sm text-white bg-[#FF0000] rounded-full w-full md:w-[244px] h-[52px] block mx-auto">
+              Continue
+            </button>
+          </Link>
         </div>
       </div>
 
