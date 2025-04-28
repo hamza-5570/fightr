@@ -60,7 +60,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="self-center">
+        <Link href={'/'} className="self-center">
           <Image
             src="/assets/png/logo.png"
             alt="Logo"
@@ -68,7 +68,7 @@ export default function Navbar() {
             height={32}
             className="w-[140px] md:w-auto lg:mx-auto"
           />
-        </div>
+        </Link>
 
         <div className="hidden lg:block">
           {user ? (

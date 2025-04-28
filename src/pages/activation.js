@@ -13,6 +13,9 @@ export default function Activation() {
 
   return (
     <div className="py-10 relative">
+   
+   <Link href={'/'} >
+
       <Image
         src="/assets/png/logo.png"
         alt="Fightr Logo"
@@ -20,6 +23,7 @@ export default function Activation() {
         height={32}
         className="w-[140px] md:w-auto mx-auto"
       />
+      </Link>
 
       <div className="min-h-screen flex items-center justify-center">
         <div className="bg-[#141414] border border-[#1d1d1d] w-[90%] md:w-[70%] lg:w-[55%] xl:w-[35%] p-5 md:p-10 rounded-[20px]">

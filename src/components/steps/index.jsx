@@ -53,7 +53,10 @@ export default function Steps({ formik, loading }) {
   return (
     <div className="grid lg:grid-cols-12">
       <div className="lg:col-span-4 bg-[#0F0F0F] p-10 lg:h-screen relative">
+      <Link href={'/'} >
+      
         <Image src={"/assets/png/logo.png"} alt="" width={196} height={32} />
+        </Link>
 
         <p className="font-bold text-3xl text-white mt-14">Let’s Get Started</p>
         <p className="font-bold text-3xl text-white">

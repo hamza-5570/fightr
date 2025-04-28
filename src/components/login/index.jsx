@@ -48,6 +48,8 @@ export default function Login() {
   });
   return (
     <div className="bg-res py-10">
+        <Link href={'/'} >
+    
       <Image
         src="/assets/png/logo.png"
         alt=""
@@ -55,6 +57,7 @@ export default function Login() {
         height={32}
         className="w-[140px] md:w-auto mx-auto"
       />
+      </Link>
 
       <form
         onSubmit={formik.handleSubmit}

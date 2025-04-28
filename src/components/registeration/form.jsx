@@ -9,6 +9,8 @@ export default function Form({ formik, handleStep }) {
 
   return (
     <div className="bg-res py-10">
+         <Link href={'/'} >
+   
       <Image
         src="/assets/png/logo.png"
         alt=""
@@ -16,6 +18,7 @@ export default function Form({ formik, handleStep }) {
         height={32}
         className="w-[140px] md:w-auto mx-auto"
       />
+      </Link>
 
       <div className="bg-[#141414] border-[1px] border-[#1d1d1d] mt-10 w-[90%] md:w-[80%] lg:w-[60%] xl:w-[40%] mx-auto p-5 md:p-10 rounded-[20px]">
         <h2 className="font-bold text-[24px] md:text-[32px] text-white text-center">
