@@ -3,21 +3,25 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Dropdown from "../dropdown";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaRegCalendarAlt } from "react-icons/fa";
 
 export default function Form({ formik, handleStep }) {
   const [visible, setVisible] = useState(false);
 
+  const handleClick = () => {
+    document.getElementById("date-picker").showPicker();
+  };
+
   return (
     <div className="bg-res py-10">
-         <Link href={'/'} >
-   
-      <Image
-        src="/assets/png/logo.png"
-        alt=""
-        width={196}
-        height={32}
-        className="w-[140px] md:w-auto mx-auto"
-      />
+      <Link href={"/"}>
+        <Image
+          src="/assets/png/logo.png"
+          alt=""
+          width={196}
+          height={32}
+          className="w-[140px] md:w-auto mx-auto"
+        />
       </Link>
 
       <div className="bg-[#141414] border-[1px] border-[#1d1d1d] mt-10 w-[90%] md:w-[80%] lg:w-[60%] xl:w-[40%] mx-auto p-5 md:p-10 rounded-[20px]">
@@ -109,15 +113,28 @@ export default function Form({ formik, handleStep }) {
               />
             </div> */}
 
-            <div className="md:col-span-6 bg-[#191919] rounded-[12px] p-3">
+            <div className="md:col-span-6 bg-[#191919] rounded-[12px] p-3 relative">
               <p className="font-medium text-[12px] text-[#605858]">
                 Date of Birth (Optional)
               </p>
-              <Dropdown
-                value={formik.values.selectedDOB}
-                options={["10", "25", "50", "100"]}
-                onChange={(val) => formik.setFieldValue("selectedDOB", val)}
-              />
+              <div onClick={handleClick}>
+                {" "}
+                <input
+                  id="date-picker"
+                  type="date"
+                  className="font-bold text-sm text-white outline-none bg-[#191919] w-full pr-10 appearance-none [&::-webkit-calendar-picker-indicator]:opacity-0"
+                  value={formik.values.dateOfBirth || ""}
+                  onChange={(e) =>
+                    formik.setFieldValue("dateOfBirth", e.target.value)
+                  }
+                />
+                <FaRegCalendarAlt className="absolute right-4 top-[34px] text-white cursor-pointer" />
+              </div>
+              {formik.touched.dateOfBirth && formik.errors.dateOfBirth && (
+                <div className="text-red-500 text-xs">
+                  {formik.errors.dateOfBirth}
+                </div>
+              )}
             </div>
 
             <div className="md:col-span-6 bg-[#191919] rounded-[12px] p-3">
