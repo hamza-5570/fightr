@@ -42,14 +42,7 @@ export default function Navbar() {
           >
             About Us
           </Link>
-          <Link
-            href="/contact"
-            className={`font-medium text-sm ${
-              pathname === "/contact" ? "text-[#FF0000]" : "text-white"
-            } hover:text-[#FF0000] cursor-pointer`}
-          >
-            Contact Us
-          </Link>
+         
           <Link
             href="/events"
             className={`font-medium text-sm ${
@@ -58,6 +51,15 @@ export default function Navbar() {
           >
             Events
           </Link>
+          <Link
+            href="/contact"
+            className={`font-medium text-sm ${
+              pathname === "/contact" ? "text-[#FF0000]" : "text-white"
+            } hover:text-[#FF0000] cursor-pointer`}
+          >
+            Contact Us
+          </Link>
+
         </div>
 
         <Link href={'/'} className="self-center">
@@ -132,15 +134,7 @@ export default function Navbar() {
               >
                 About Us
               </Link>
-              <Link
-                href="/contact"
-                className={`font-medium text-lg ${
-                  pathname === "/contact" ? "text-[#FF0000]" : "text-white"
-                }`}
-                onClick={toggleDrawer}
-              >
-                Contact Us
-              </Link>
+            
               <Link
                 href="/events"
                 className={`font-medium text-lg ${
@@ -150,6 +144,16 @@ export default function Navbar() {
               >
                 Events
               </Link>
+              <Link
+                href="/contact"
+                className={`font-medium text-lg ${
+                  pathname === "/contact" ? "text-[#FF0000]" : "text-white"
+                }`}
+                onClick={toggleDrawer}
+              >
+                Contact Us
+              </Link>
+
               <Link href={"/registration"}>
                 <button className="mt-4 bg-[#FF0000] text-white font-bold py-2 px-4 rounded-full w-full">
                   Get Started

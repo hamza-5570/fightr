@@ -100,14 +100,14 @@ export default function Form({ formik, handleStep }) {
               )}
             </div>
 
-            <div className="md:col-span-6 bg-[#191919] rounded-[12px] p-3">
+            {/* <div className="md:col-span-6 bg-[#191919] rounded-[12px] p-3">
               <p className="font-medium text-[12px] text-[#605858]">Age</p>
               <Dropdown
                 value={formik.values.selectedValue}
                 options={["10", "25", "50", "100"]}
                 onChange={(val) => formik.setFieldValue("selectedValue", val)}
               />
-            </div>
+            </div> */}
 
             <div className="md:col-span-6 bg-[#191919] rounded-[12px] p-3">
               <p className="font-medium text-[12px] text-[#605858]">
