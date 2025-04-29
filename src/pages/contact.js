@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaTiktok } from "react-icons/fa";
 
 export default function Registration() {
   return (
@@ -60,14 +61,21 @@ export default function Registration() {
             />
           </Link>
           <Link href="https://x.com/fightrapp" target="_blank">
-            <Image
-              src={"/assets/svg/icon3.svg"}
-              alt=""
-              width={52}
-              height={52}
-              className="cursor-pointer"
-            />
-          </Link>
+              <Image
+                src={"/assets/svg/icon3.svg"}
+                alt=""
+                width={52}
+                height={52}
+                className="cursor-pointer"
+              />
+            </Link>
+            <Link href="https://www.tiktok.com/@fightrapp" target="_blank">
+              <div className="relative">
+                <div className="self-center bg-white/5 opacity-70 backdrop-blur-xs rounded-[12px]  w-[52px] h-[52px]"></div>
+
+                <FaTiktok className="text-white text-[20px] absolute z-20 top-4 left-0 right-0 mx-auto" />
+              </div>
+            </Link>
         </div>
       </div>
     </div>

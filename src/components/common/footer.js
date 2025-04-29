@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebookF, FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -23,23 +23,39 @@ export default function Footer() {
             </h4>
 
             <div className="flex justify-center md:justify-start gap-2 mt-5">
-              <div className="w-[52px] h-[52px] flex items-center justify-center bg-[#161616] rounded-lg cursor-pointer">
-                <FaFacebookF size={20} color="#fff" />
+              <Link
+                href="https://www.facebook.com/share/1G1wHBj1Dh/?mibextid=wwXIfr"
+                target="_blank"
+              >
+                <div className="w-[52px] h-[52px] flex items-center justify-center bg-[#161616] rounded-lg cursor-pointer">
+                  <FaFacebookF size={20} color="#fff" />
+                </div>
+              </Link>
+              <Link href="https://instagram.com/fightr.app" target="_blank">
+                <Image
+                  src={"/assets/svg/fsoc2.svg"}
+                  alt=""
+                  width={52}
+                  height={52}
+                  className="cursor-pointer"
+                />
+              </Link>
+              <Link href="https://x.com/fightrapp" target="_blank">
+                <Image
+                  src={"/assets/svg/fsoc4.svg"}
+                  alt=""
+                  width={52}
+                  height={52}
+                  className="cursor-pointer"
+                />
+              </Link>
+              <Link href="https://www.tiktok.com/@fightrapp" target="_blank">
+              <div className="relative">
+                <div className="self-center bg-[#161616] opacity-70 backdrop-blur-xs rounded-[12px]  w-[52px] h-[52px]"></div>
+
+                <FaTiktok className="text-white text-[20px] absolute z-20 top-4 left-0 right-0 mx-auto" />
               </div>
-              <Image
-                src={"/assets/svg/fsoc2.svg"}
-                alt=""
-                width={52}
-                height={52}
-                className="cursor-pointer"
-              />
-              <Image
-                src={"/assets/svg/fsoc4.svg"}
-                alt=""
-                width={52}
-                height={52}
-                className="cursor-pointer"
-              />
+            </Link>
             </div>
           </div>
 
@@ -50,7 +66,13 @@ export default function Footer() {
                 href={"/privacy-policy"}
                 className="font-medium text-[12px] text-white opacity-50 hover:opacity-100 cursor-pointer"
               >
-                Privacy Policy
+                <p>Privacy Policy</p>
+              </Link>
+              <Link
+                href={"/terms-service"}
+                className="font-medium text-[12px] text-white opacity-50 hover:opacity-100 cursor-pointer"
+              >
+                <p className="mt-5">Terms of Service</p>
               </Link>
             </div>
 

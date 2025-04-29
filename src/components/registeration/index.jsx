@@ -25,7 +25,7 @@ export default function Registeration() {
       password: "",
       weight: "",
       gender: "",
-      selectedValue: "25",
+      selectedValue: "",
       selectedDOB: "",
       selectedDiscipline: "",
       acceptPolicy: false,

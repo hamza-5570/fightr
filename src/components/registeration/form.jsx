@@ -146,7 +146,7 @@ export default function Form({ formik, handleStep }) {
               />
             </div>
 
-            <div className="md:col-span-12 bg-[#191919] rounded-[12px] p-3">
+            <div className="md:col-span-6 bg-[#191919] rounded-[12px] p-3">
               <p className="font-medium text-[12px] text-[#605858]">
                 Discipline (Optional)
               </p>
@@ -198,7 +198,7 @@ export default function Form({ formik, handleStep }) {
             Continue
           </button>
 
-          <div className="text-white mt-5">
+          <div className="text-white text-center mt-5">
             Already have an account?{" "}
             <Link href="/login" className="text-[#FF0000] underline">
               Login

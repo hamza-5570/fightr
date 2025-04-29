@@ -20,7 +20,7 @@ const roles = [
   {
     id: 3,
     title: "Trainer",
-    description: "Share your expertise and grow your fighter network.",
+    description: "Share your expertise and grow your network.",
     icon: "/assets/svg/ty3.svg",
   },
   {
